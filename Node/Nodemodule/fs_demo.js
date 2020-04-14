@@ -19,7 +19,19 @@ const path =require('path');
 // //--->this will add a text in the file not append in the file
 
 // Append  file
-fs.appendFile(path.join(__dirname,'/test1','hello.txt'),":::kya hua??",(err,data)=>{
+// fs.appendFile(path.join(__dirname,'/test1','hello.txt'),":::kya hua??",(err,data)=>{
+//     if(err) throw err;
+//     console.log("File appended");
+// })
+
+//Read the file
+// fs.readFile(path.join(__dirname,'/test1','hello.txt'),'',(err,data)=>{
+//     if(err) throw err;
+//     console.log("data is "+data);
+// })
+
+//rename the file
+fs.rename(path.join(__dirname,'/test1','hello.txt'),path.join(__dirname,'/test1','hi.txt'),(err,data)=>{
     if(err) throw err;
-    console.log("File appended");
+    console.log("file is renamed!!!");
 })
