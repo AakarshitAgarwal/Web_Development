@@ -1,0 +1,21 @@
+{
+  "name": "Nodemodule",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fs_demo.js",
+  "dependencies": {
+    "install": "^0.13.0"
+    
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev": "nodemon server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
