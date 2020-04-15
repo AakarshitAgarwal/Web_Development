@@ -33,6 +33,24 @@ const server=http.createServer((req,res)=>{
         res.writeHead(200,{'Content-Type':'application/json'})     //jason format
         res.end(JSON.stringify(users));
     }
+    else if(req.url==='/style.css'){
+        fs.readFile(path.join(__dirname,'public','style.css'),(err,content)=>{
+            if(err) throw err;
+            res.writeHead(200,{'Content-Type':'text/css'});
+            res.end(content);
+        })
+    }
+    else if(req.url==='/js/index.js'){
+        fs.readFile(path.join(__dirname,'public/js','index.js'),(err,content)=>{
+            if(err) throw err;
+            res.writeHead(200,{'Content-Type':'text/javascript'});
+            res.end(content);
+        })
+    }
+    else{
+        res.writeHead(404);
+        res.end("<h1>Page not found</h1>");
+    }
 })
 
 const PORT=3000;
