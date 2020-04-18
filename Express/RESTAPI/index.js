@@ -25,7 +25,7 @@ app.get('/api/members/:id',(req,res)=>{
     res.status(400).json("Member not found");
   }
 })
-app.post('/',(req,res)=>{
+app.post('/api/members',(req,res)=>{
   //res.json(req.body);--->we can take it by ourself from postman body which we try in frontend
   const newMember={
     id:5,
@@ -37,5 +37,25 @@ app.post('/',(req,res)=>{
   members.push(newMember);
   res.json(members);
 })
+
+//Update Member
+app.put('/api/members/:id',(req,res)=>{
+  const found =members.some(member=>member.id===parseInt(req.params.id));
+  if(found){
+    //res.jason(members.filter(member=>member.id===parseInt(req.params.id)));
+    members.forEach(member=>{
+      if(member.id===parseInt(req.params.id)){
+        member.name=req.body.name,
+        member.email=req.body.email
+        res.json({msg:'Member updated',member:member});
+      }
+    })
+  }
+  else{
+    res.status(400).json({msg:`No member with the id of ${req.params.id}`});
+  }
+  
+})
+
 const PORT=3000;
 app.listen(PORT,()=>{console.log(`Server is running at ${PORT}`)});
