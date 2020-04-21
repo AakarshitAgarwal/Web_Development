@@ -1,6 +1,5 @@
 const express=require('express');
-const mysql =require('mysql');
-const db=require('../data');
+const db=require('../models/data');
 
 const router =express.Router(); //use to join two URL
 
