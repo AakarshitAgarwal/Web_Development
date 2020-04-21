@@ -6,9 +6,10 @@ const router =express.Router(); //use to join two URL
 
 
 //insert data
-router.get('/insertposts',(req,res)=>{  //while localhost:5000/insertposts
+router.post('/insertposts',(req,res)=>{  //while localhost:5000/insertposts
     // let post ={title:'Post One',body:'This is Post One',email:'aakarshit@gmail.com'};
     let post={title:req.body.title,body:req.body.body,email:req.body.email};
+    //res.send(post);
     let sql ="INSERT INTO `posts` SET ?";  //PLACEHOLDER
     db.query(sql,post,(err,result)=>{
         if(err) throw err;
