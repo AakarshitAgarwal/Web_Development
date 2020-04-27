@@ -1,1 +1,21 @@
-<h1>Hello </h1>
+<div class="container">
+    <h2>Contextual Classes</h2>
+    <table class="table">
+        <thread>
+            <tr>
+                <th >Firstname</th>
+                <th>Lastname</th>
+                <th>Enail</th>
+            </tr>
+        </thread>
+        <tbody>
+            {{#each result1}}
+            <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.body}}</td>
+            <td>{{this.email}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+    </table>
+</div>
